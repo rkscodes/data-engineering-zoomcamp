@@ -1,1 +1,3 @@
 .ipynb_checkpoints/
+variables.tf
+.terraform/
