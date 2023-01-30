@@ -2,3 +2,5 @@
 *.csv
 *.gz
 .DS_Store
+.terraform
+*.parquet
