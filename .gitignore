@@ -1,2 +1,6 @@
 .ipynb_checkpoints/
-.terraform/
+*.csv
+*.gz
+.DS_Store
+.terraform
+*.parquet
