@@ -6,7 +6,7 @@ from prefect.tasks import task_input_hash
 from datetime import timedelta
 
 
-@task(retries=3, cache_key_fn=task_input_hash, cache_expiration=timedelta(days=1))
+@task(retries=3)
 def fetch(dataset_url: str) -> pd.DataFrame:
     """Read data from web into pandas dataframe"""
     df = pd.read_csv(dataset_url)
@@ -46,7 +46,8 @@ def etl_web_to_gcs(color: str, year: int, month: int) -> None:
     dataset_file = f"{color}_tripdata_{year}-{month:02}"
     dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
 
-    # dataset_url = "http://localhost:8000/yellow_tripdata_2021-01.csv.gz"
+    # dataset_url = ""
+
     df = fetch(dataset_url)
     df_clean = clean(df)
     path = write_local(df_clean, color, dataset_file)
