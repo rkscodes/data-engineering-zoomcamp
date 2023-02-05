@@ -1,0 +1,55 @@
+###
+### A complete description of a Prefect Deployment for flow 'etl-gcs-to-bg-parent'
+###
+name: GCS to Bigquery Homework 2
+description: null
+version: d9ed4a635c7e2a3cc576973e89e09fb8
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters: {}
+schedule: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-gcs-to-bg-parent
+manifest_path: null
+storage: null
+path: /home/ram/data-engineering-zoomcamp/week_2/02_gcp
+entrypoint: etl_gcs_to_bq.py:etl_gcs_to_bg_parent
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    color:
+      title: color
+      default: yellow
+      position: 0
+      type: string
+    year:
+      title: year
+      default: 2019
+      position: 1
+      type: integer
+    months:
+      title: months
+      default:
+      - 2
+      - 3
+      position: 2
+      type: array
+      items: {}
+  required: null
+  definitions: null
