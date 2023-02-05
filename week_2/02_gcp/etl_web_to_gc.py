@@ -48,6 +48,7 @@ def etl_web_to_gcs(color:str = "green", year:int= 2020, month:int = 11) -> None:
     dataset_url = f"https://github.com/DataTalksClub/nyc-tlc-data/releases/download/{color}/{dataset_file}.csv.gz"
 
     # dataset_url = "http://localhost:8000/yellow_tripdata_2021-01.csv.gz"
+    print(dataset_file)
     df = fetch(dataset_url)
     # df_clean = clean(df)
     path = write_local(df, color, dataset_file)
