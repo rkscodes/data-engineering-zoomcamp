@@ -9,10 +9,9 @@ from google.oauth2 import service_account
 
 def write_bq(df: pd.DataFrame, dataset_file:str) -> None:
     print("Writing to gcs")
-    credentials = service_account.Credentials.from_service_account_file(
-        '/Users/ram/.config/gcloud/engaged-cosine-374921-75cecdfaf8e1.json',)
+    credentials = service_account.Credentials.from_service_account_file('/home/ram/.config/gcloud/engaged-cosine-374921-75cecdfaf8e1.json',)
     df.to_gbq(
-        destination_table=f"taxi_data_all_2019_taxi_data",
+        destination_table=f"taxi_data_all.{dataset_file}",
         project_id="engaged-cosine-374921", chunksize=10000, if_exists="append",
         credentials=credentials)
 
