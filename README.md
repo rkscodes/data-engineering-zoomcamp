@@ -48,3 +48,18 @@ In this week, I learned about:
    - Creating a Docker for current ETL
    - Configuring details in Prefect UI to access Docker image through Docker Hub
    - Using Python API to create deployment for Docker
+
+## Week 3 📅
+1. Data Warehouse
+   - What is data warehouse 
+   - It prefers denormalized data
+   - This OLAP (Online Analytical Process) not OLTP (Online Transaction process)
+   - Difference in Data-Lake and Data-Warehouse
+2. Bigquery 
+   - What is google bigquery 
+   - It's Architecture 
+   - Partioning: When using where clause
+   - Clustering: Mostly if something is group quiered 
+   - Training model in Bigquery 
+   - External Table 
+   - See query time by selecting to the clause which is to be run 
