@@ -1,17 +1,16 @@
 ###
 ### A complete description of a Prefect Deployment for flow 'etl-parent-flow'
 ###
-name: Home-work 2 Green data
+name: Parameterized-Flow
 description: null
 version: 9bbfbc91219ea039e8100590a43d40de
 # The work queue that will handle this deployment's runs
 work_queue_name: default
+work_pool_name: null
 tags: []
-parameters: {"color" : "yellow", "year":2020 , "months":[1]}
-schedule:
-  cron: 0 5 1 * *
-  timezone: null
-  day_or: true
+parameters: {}
+schedule: null
+is_schedule_active: null
 infra_overrides: {}
 infrastructure:
   type: process
@@ -30,7 +29,7 @@ infrastructure:
 flow_name: etl-parent-flow
 manifest_path: null
 storage: null
-path: /home/ram/data-engineering-zoomcamp/week_2/03_deployment
+path: /home/rkscodes/data-engineering-zoomcamp/week_2/03_deployment
 entrypoint: parametrized_flow.py:etl_parent_flow
 parameter_openapi_schema:
   title: Parameters
@@ -57,3 +56,4 @@ parameter_openapi_schema:
   - color
   - year
   definitions: null
+timestamp: '2023-02-17T06:16:37.398663+00:00'

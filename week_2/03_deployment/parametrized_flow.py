@@ -43,6 +43,10 @@ def write_gcs(path: Path) -> None:
     gcs_block.upload_from_path(from_path=path, to_path=path)
     return
 
+@task()
+def remove_local(path : Path) -> None:
+    path.unlink(missing_ok=True)
+
 
 @flow(log_prints=True)
 def etl_web_to_gcs(color: str, year: int, month: int) -> None:
@@ -55,6 +59,7 @@ def etl_web_to_gcs(color: str, year: int, month: int) -> None:
     # df_clean = clean(df)
     path = write_local(df, color, dataset_file)
     write_gcs(path)
+    remove_local(path)
 
 
 @flow(log_prints=True)
