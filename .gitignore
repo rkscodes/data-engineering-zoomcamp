@@ -11,3 +11,4 @@ logs/
 # end dbt Cloud content
 *.crc
 week_5/data
+week_6/client.properties
