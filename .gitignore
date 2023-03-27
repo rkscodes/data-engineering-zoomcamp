@@ -12,3 +12,5 @@ logs/
 *.crc
 week_5/data
 week_6/client.properties
+week_6/test_confluent_cloud/client.properties
+.venv/
